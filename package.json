@@ -1,0 +1,34 @@
+{
+  "name": "postcss-viewport-units",
+  "version": "0.1.0",
+  "description": "Automatically append `content` property for viewport-units-buggyfill",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js test/",
+    "test": "mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/springuper/postcss-viewport-units.git"
+  },
+  "keywords": [
+    "postcss",
+    "viewport-units-buggyfill",
+    "content"
+  ],
+  "author": "springuper@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/springuper/postcss-viewport-units/issues"
+  },
+  "homepage": "https://github.com/springuper/postcss-viewport-units#readme",
+  "dependencies": {
+    "postcss": "^5.2.8"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0"
+  }
+}
