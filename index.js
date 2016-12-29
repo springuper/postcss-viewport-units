@@ -19,9 +19,11 @@ module.exports = postcss.plugin('postcss-viewport-units', () => (root, result) =
       }
     });
 
+    if (viewportUnitDecls.length === 0) return;
+
     if (hasContent) {
       rule.warn(result, `'${rule.selector}' already has a 'content' property, give up to overwrite it.`);
-    } else if (viewportUnitDecls.length > 0) {
+    } else {
       rule.append({
         prop: CONTENT_PROP,
         value: `'${[PREFIX].concat(viewportUnitDecls).join('; ')}'`,
