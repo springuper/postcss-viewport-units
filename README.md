@@ -14,6 +14,10 @@ $ npm install postcss-viewport-units
 
 See [PostCSS](https://github.com/postcss/postcss#usage) usage section for detail.
 
+##### Options
+
+`onlyCalc`(`Boolean`): if `ture`, only process `calc` values. it's `false` by default, which means, all values including `vw` `vh` `vmin` `vmax` are processed.
+
 ## License
 
 MIT.
