@@ -4,7 +4,7 @@ const regViewportUnit = /\d(vw|vh|vmax|vmin)\b/;
 const CONTENT_PROP = 'content';
 const PREFIX = 'viewport-units-buggyfill';
 
-module.exports = postcss.plugin('postcss-viewport-units', (options) => (root, result) => {
+module.exports = postcss.plugin('postcss-viewport-units', options => (root, result) => {
   const onlyCalc = options && options.onlyCalc;
 
   root.walkRules((rule) => {
