@@ -5,7 +5,8 @@ const CONTENT_PROP = 'content';
 const PREFIX = 'viewport-units-buggyfill';
 
 module.exports = postcss.plugin('postcss-viewport-units', options => (root, result) => {
-  const onlyCalc = options && options.onlyCalc;
+  const opts = options || {};
+  const test = opts.test || (value => regViewportUnit.test(value));
 
   root.walkRules((rule) => {
     let hasContent;
@@ -16,8 +17,8 @@ module.exports = postcss.plugin('postcss-viewport-units', options => (root, resu
         hasContent = true;
       }
 
-      if (regViewportUnit.test(decl.value)) {
-        if (onlyCalc && decl.value.indexOf('calc') !== 0) return;
+      if (test(decl.value)) {
+        if (opts.onlyCalc && decl.value.indexOf('calc') !== 0) return;
         viewportUnitDecls.push(`${decl.prop}: ${decl.value}`);
       }
     });
