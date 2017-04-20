@@ -9,7 +9,7 @@ module.exports = postcss.plugin('postcss-viewport-units', options => (root, resu
   const test = opts.test || (value => regViewportUnit.test(value));
 
   root.walkRules((rule) => {
-    let hasContent;
+    var hasContent;
     const viewportUnitDecls = [];
 
     rule.nodes.slice(0).forEach((decl) => {
