@@ -1,0 +1,9 @@
+.icon-book::before {
+  width: 2vw;
+  height: 2vh;
+}
+.icon-book::after {
+  content: 'book';
+  width: 2vw;
+  height: 2vh;
+}

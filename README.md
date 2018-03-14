@@ -20,6 +20,8 @@ See [PostCSS](https://github.com/postcss/postcss#usage) usage section for detail
 
 `test`(`[Function]`): used to judge whether current value of declaration should be considered including viewport units, the default is `value => /\d(vw|vh|vmax|vmin)\b/.test(value)`.
 
+`filterRule`(`[Function]`): used to filter out rules which need be processed.
+
 ## License
 
 MIT.
