@@ -1,6 +1,7 @@
 # postcss-viewport-units
 
 [![Build Status](https://travis-ci.org/springuper/postcss-viewport-units.svg?branch=master)](https://travis-ci.org/springuper/postcss-viewport-units)
+[![npm version](https://badge.fury.io/js/postcss-viewport-units.svg)](https://badge.fury.io/js/postcss-viewport-units)
 
 Automatically append `content` property for [viewport-units-buggyfill](https://github.com/rodneyrehm/viewport-units-buggyfill).
 
