@@ -40,6 +40,6 @@ describe('postcss-viewport-units', () => {
   it('should only continue to process valid rules if `options.filterRule` is specified', () => compare(
     'filter-rule-option',
     null,
-    { filterRule: (rule) => rule.selector.indexOf('::after') === -1 }
+    { filterRule: rule => rule.selector.indexOf('::after') === -1 }
   ));
 });
