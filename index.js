@@ -11,6 +11,7 @@ module.exports = postcss.plugin('postcss-viewport-units', options => (root, resu
   root.walkRules((rule) => {
     let hasContent;
     const viewportUnitDecls = [];
+    if (opts.filterRule && !opts.filterRule(rule)) return;
 
     rule.nodes.slice(0).forEach((decl) => {
       if (decl.prop === CONTENT_PROP && !hasContent) {

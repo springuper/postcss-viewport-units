@@ -36,4 +36,10 @@ describe('postcss-viewport-units', () => {
       '\'.hero:after\' already has a \'content\' property, give up to overwrite it.',
     ])
   ));
+
+  it('should only continue to process valid rules if `options.filterRule` is specified', () => compare(
+    'filter-rule-option',
+    null,
+    { filterRule: (rule) => rule.selector.indexOf('::after') === -1 }
+  ));
 });
