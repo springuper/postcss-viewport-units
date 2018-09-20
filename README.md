@@ -23,6 +23,8 @@ See [PostCSS](https://github.com/postcss/postcss#usage) usage section for detail
 
 `filterRule`(`[Function]`): used to filter out rules which need be processed.
 
+`silence`(`[Boolean]`): if `true`, will not print warning even though there is a `content` property. it's `false` by default.
+
 ## License
 
 MIT.

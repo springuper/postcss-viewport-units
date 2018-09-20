@@ -21,7 +21,9 @@ function compare(filename, warnings, options) {
       if (warnings) {
         assert.deepEqual(result.warnings().map(item => item.text), warnings);
       }
-
+      if (options && options.silence === true) {
+        assert.equal(result.warnings().length, 0);
+      }
       return result;
     });
 }
@@ -36,6 +38,8 @@ describe('postcss-viewport-units', () => {
       '\'.hero:after\' already has a \'content\' property, give up to overwrite it.',
     ])
   ));
+
+  it('should not give a warning when `options.silence` is true even though there is already a `content` property', () => compare('with-content', null, { silence: true }));
 
   it('should only continue to process valid rules if `options.filterRule` is specified', () => compare(
     'filter-rule-option',
