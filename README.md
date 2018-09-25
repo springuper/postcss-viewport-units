@@ -8,7 +8,7 @@ Automatically append `content` property for [viewport-units-buggyfill](https://g
 ## Install
 
 ```bash
-  npm install postcss-viewport-units
+> $ npm install postcss-viewport-units
 ```
 
 ## Usage
