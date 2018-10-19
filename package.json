@@ -1,6 +1,6 @@
 {
   "name": "postcss-viewport-units",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Automatically append `content` property for viewport-units-buggyfill",
   "main": "index.js",
   "scripts": {
