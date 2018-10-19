@@ -21,7 +21,9 @@ See [PostCSS](https://github.com/postcss/postcss#usage) usage section for detail
 
 `test`(`[Function]`): used to judge whether current value of declaration should be considered including viewport units, the default is `value => /\d(vw|vh|vmax|vmin)\b/.test(value)`.
 
-`filterRule`(`[Function]`): used to filter out rules which need be processed.
+`filterFile`(`[Function]`): used to filter out files which need be processed, you can refer to [test case](test/index.js) to see how it works.
+
+`filterRule`(`[Function]`): used to filter out rules which need be processed, you can refer to [test case](test/index.js) to see how it works.
 
 `silence`(`[Boolean]`): if `true`, will not print warning even though there is a `content` property. it's `false` by default.
 
