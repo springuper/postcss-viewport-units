@@ -9,6 +9,8 @@ module.exports = postcss.plugin('postcss-viewport-units', options => (root, resu
   const test = opts.test || (value => regViewportUnit.test(value));
   const { silence = false } = opts;
 
+  if (opts.filterFile && !opts.filterFile(root.source.input.file || '')) return;
+
   root.walkRules((rule) => {
     let hasContent;
     const viewportUnitDecls = [];
