@@ -8,20 +8,22 @@ Automatically append `content` property for [viewport-units-buggyfill](https://g
 ## Install
 
 ```bash
-$ npm install postcss-viewport-units
+> $ npm install postcss-viewport-units
 ```
 
 ## Usage
 
 See [PostCSS](https://github.com/postcss/postcss#usage) usage section for detail.
 
-##### Options
+### Options
 
 `onlyCalc`(`[Boolean]`): if `ture`, only process `calc` values. it's `false` by default, which means, all values including `vw` `vh` `vmin` `vmax` are processed.
 
 `test`(`[Function]`): used to judge whether current value of declaration should be considered including viewport units, the default is `value => /\d(vw|vh|vmax|vmin)\b/.test(value)`.
 
 `filterRule`(`[Function]`): used to filter out rules which need be processed.
+
+`silence`(`[Boolean]`): if `true`, will not print warning even though there is a `content` property. it's `false` by default.
 
 ## License
 

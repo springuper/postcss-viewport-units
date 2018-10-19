@@ -7,6 +7,7 @@ const PREFIX = 'viewport-units-buggyfill';
 module.exports = postcss.plugin('postcss-viewport-units', options => (root, result) => {
   const opts = options || {};
   const test = opts.test || (value => regViewportUnit.test(value));
+  const { silence = false } = opts;
 
   root.walkRules((rule) => {
     let hasContent;
@@ -27,7 +28,9 @@ module.exports = postcss.plugin('postcss-viewport-units', options => (root, resu
     if (viewportUnitDecls.length === 0) return;
 
     if (hasContent) {
-      rule.warn(result, `'${rule.selector}' already has a 'content' property, give up to overwrite it.`);
+      if (!silence) {
+        rule.warn(result, `'${rule.selector}' already has a 'content' property, give up to overwrite it.`);
+      }
     } else {
       rule.append({
         prop: CONTENT_PROP,
